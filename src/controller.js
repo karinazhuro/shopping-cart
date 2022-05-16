@@ -27,7 +27,7 @@ export default class Controller {
     this.view.updateTotalSum(this.model.calculateTotalSum());
     
     if (Object.values(this.model.products).length === 1) {
-      this.view.showResult();
+      this.view.showCart();
     }
   }
   
@@ -40,14 +40,13 @@ export default class Controller {
     this.view.updateTotalSum(this.model.calculateTotalSum());
   
     if (Object.values(this.model.products).length === 0) {
-      this.view.hideResult();
+      this.view.hideCart();
     }
   }
   
-  saveItem(target, id) {
-    this.model.editProduct(target, id);
-    
-    this.view.countProduct(id, this.model.products[id].amount());
+  saveItem(id, name, value) {
+    this.model.editProduct(id, name, value);
+    this.view.updateProductAmount(id, this.model.products[id].amount());
     this.view.updateTotalSum(this.model.calculateTotalSum());
   }
 }

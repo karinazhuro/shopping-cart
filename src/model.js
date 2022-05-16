@@ -11,8 +11,8 @@ export default class Model {
     delete this.products[id];
   }
   
-  editProduct(target, id) {
-    this.products[id][target.dataset.name] = target.value;
+  editProduct(id, name, value) {
+    this.products[id][name] = value;
   }
   
   calculateTotalSum() {

@@ -40,7 +40,7 @@ export default class View {
     target.setAttribute('readOnly', 'true');
   }
   
-  countProduct(id, amount) {
+  updateProductAmount(id, amount) {
     document.querySelector(`.cart-row[data-id=${id}]`)
       .querySelector('.cell-amount')
       .textContent = amount;
@@ -50,11 +50,11 @@ export default class View {
     document.querySelector('.totalSum').textContent = totalSum;
   }
   
-  showResult() {
+  showCart() {
     document.querySelector('.cart-wrap').classList.add('cart-wrap--active');
   }
   
-  hideResult() {
+  hideCart() {
     document.querySelector('.cart-wrap').classList.remove('cart-wrap--active');
   }
   
@@ -147,7 +147,7 @@ export default class View {
         if (target.classList.contains('product-text')) {
           const row = target.closest('tr');
           
-          handler(target, row.dataset.id);
+          handler(row.dataset.id, target.dataset.name, target.value);
           this.saveEditProduct(target);
         }
       }, true);

@@ -1,3 +1,23 @@
+@mixin btn-add {
+  height: 38px;
+  padding: 10px 50px;
+
+  font-size: 15px;
+  color: #3886cf;
+
+  background-color: #e9e9e9;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #f2efef;
+  }
+}
+
 body {
   margin: 0;
 
@@ -43,23 +63,7 @@ body {
         }
 
         .add {
-          height: 38px;
-          padding: 10px 50px;
-
-          font-size: 15px;
-          color: #3886cf;
-
-          background-color: #e9e9e9;
-          border: none;
-          outline: none;
-          border-radius: 20px;
-
-          cursor: pointer;
-          transition: 0.3s;
-
-          &:hover {
-            background-color: #f2efef;
-          }
+          @include btn-add;
         }
       }
 
@@ -203,23 +207,7 @@ body {
 
           .btns {
             .btn {
-              height: 38px;
-              padding: 10px 50px;
-
-              font-size: 15px;
-              color: #3886cf;
-
-              background-color: #e9e9e9;
-              border: none;
-              outline: none;
-              border-radius: 20px;
-
-              cursor: pointer;
-              transition: 0.3s;
-
-              &:hover {
-                background-color: #f2efef;
-              }
+              @include btn-add;
             }
           }
         }

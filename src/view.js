@@ -93,7 +93,8 @@ export default class View {
     let isValid = null;
     
     Object.entries(product).forEach(item => {
-      const addingError = document.querySelector(`.${item[0]}-wrap`).querySelector('.adding-error');
+      const addingError = document.querySelector(`.${item[0]}-wrap`)
+        .querySelector('.adding-error');
       const add = document.querySelector(`.add-${item[0]}`);
       
       if (item[1].value.length === 0) {
@@ -131,23 +132,23 @@ export default class View {
     document.querySelector('.cart-body')
       .addEventListener('click', (e) => {
         if (e.target.classList.contains('cell-delete')) {
-          const rowId = e.target.closest('tr').dataset.id;
+          const cartRowId = e.target.closest('.cart-row').dataset.id;
           
-          handler(rowId);
-          this.removeProduct(rowId);
+          handler(cartRowId);
+          this.removeProduct(cartRowId);
         }
       });
   }
   
   bindSaveEdit(handler) {
-    document.querySelector('tbody')
+    document.querySelector('.cart-body')
       .addEventListener('blur', (e) => {
         const target = e.target;
         
         if (target.classList.contains('product-text')) {
-          const row = target.closest('tr');
+          const cartRow = target.closest('.cart-row');
           
-          handler(row.dataset.id, target.dataset.name, target.value);
+          handler(cartRow.dataset.id, target.dataset.name, target.value);
           this.saveEditProduct(target);
         }
       }, true);

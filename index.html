@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <main>
+    <form class="adding-product-wrap">
+      <div class="title-wrap title-wrap-item">
+        <label>
+          <input class="adding-product add-title" type="text" placeholder="Наименование">
+        </label>
+        <p class="adding-error">Введите значение</p>
+      </div>
+
+      <div class="price-wrap title-wrap-item">
+        <label>
+          <input class="adding-product add-price" type="number" placeholder="Цена">
+        </label>
+        <p class="adding-error">Введите значение</p>
+      </div>
+
+      <div class="quantity-wrap title-wrap-item">
+        <label class="">
+          <input class="adding-product add-quantity" type="number" placeholder="Количество">
+        </label>
+        <p class="adding-error">Введите значение</p>
+      </div>
+      <button class="btn add">Добавить</button>
+    </form>
+
+    <div class="cart-wrap">
+      <table class="cart">
+        <caption class="cart-title">Таблица продуктов:</caption>
+        <thead class="cart-header">
+        <tr class="cart-row">
+          <th class="cell cell-title">Название</th>
+          <th class="cell cell-price">Цена</th>
+          <th class="cell cell-quantity">Кол-во</th>
+          <th class="cell">Сумма</th>
+          <th class="cell">Удалить</th>
+        </tr>
+        </thead>
+        <tbody class="cart-body">
+        </tbody>
+      </table>
+
+      <div class="result-wrap">
+        <p>Общий итог:&nbsp;</p>
+        <p class="totalSum"></p>
+      </div>
+    </div>
+    <div class="popup">
+      <div class="popup-overlay"></div>
+      <div class="popup-wrapper">
+        <div class="popup-text-wrap">
+          <p class="popup-text">Вы уверены, что хотите удалить
+            <span class="popup-product"></span>
+            ?
+          </p>
+        </div>
+        <div class="btns">
+          <button class="btn btn-apply">Да</button>
+          <button class="btn btn-cancel">Нет</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

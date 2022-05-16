@@ -5,7 +5,7 @@ export default class Row {
     
     const cartBody = document.querySelector('.cart-body');
     
-    const row = document.createElement('tr');
+    const cartRow = document.createElement('tr');
     const tdTitle = document.createElement('td');
     const tdPrice = document.createElement('td');
     const tdQuantity = document.createElement('td');
@@ -16,13 +16,13 @@ export default class Row {
     const inputPrice = document.createElement('input');
     const inputQuantity = document.createElement('input');
   
-    row.classList.add('cart-row');
-    row.dataset.id = title;
-    cartBody.append(row);
+    cartRow.classList.add('cart-row');
+    cartRow.dataset.id = title;
+    cartBody.append(cartRow);
     
     tdTitle.classList.add('cell');
     tdTitle.classList.add('cell-title');
-    row.append(tdTitle);
+    cartRow.append(tdTitle);
   
     inputTitle.classList.add('product-text');
     inputTitle.dataset.name = 'title';
@@ -32,7 +32,7 @@ export default class Row {
   
     tdPrice.classList.add('cell');
     tdPrice.classList.add('cell-price');
-    row.append(tdPrice);
+    cartRow.append(tdPrice);
   
     inputPrice.classList.add('product-text');
     inputPrice.dataset.name = 'price';
@@ -42,7 +42,7 @@ export default class Row {
   
     tdQuantity.classList.add('cell');
     tdQuantity.classList.add('cell-quantity');
-    row.append(tdQuantity);
+    cartRow.append(tdQuantity);
   
     inputQuantity.classList.add('product-text');
     inputQuantity.dataset.name = 'quantity';
@@ -53,7 +53,7 @@ export default class Row {
     tdAmount.classList.add('cell');
     tdAmount.classList.add('cell-amount');
     tdAmount.textContent = amount;
-    row.append(tdAmount);
+    cartRow.append(tdAmount);
     
     tdDelete.classList.add('cell');
     tdDelete.classList.add('cell-delete');
@@ -61,6 +61,6 @@ export default class Row {
     tdDelete.classList.add('material-icons-round');
     tdDelete.classList.add('md-dark');
     tdDelete.textContent = 'delete';
-    row.append(tdDelete);
+    cartRow.append(tdDelete);
   }
 }
